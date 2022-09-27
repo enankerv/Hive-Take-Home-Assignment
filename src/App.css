@@ -1,7 +1,8 @@
 .dropdown{
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
+  display: inline-block
 }
 
 .dropDownItem {
@@ -24,10 +25,9 @@
   min-width: 9em;
   margin: 0;
   background-color: white;
-  width: 15%;
+  padding: 0 10px 0 0;
   list-style: none;
   box-shadow: 10px 10px 40px rgba(185, 185, 185, 0.523);
-  padding: 0.4%;
   max-height: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -38,7 +38,7 @@
   border: 2px solid  #417ACE;
   clear: both;
   width: 15%;
-  padding: 0.4%;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,4 +74,10 @@
 .tagline {
   font-size: small;
   color: #417ACE;
+}
+
+.main{
+  margin: 5% 50%;
+  display: flex;
+  flex-direction: column;
 }

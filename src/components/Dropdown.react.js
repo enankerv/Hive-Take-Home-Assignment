@@ -11,13 +11,6 @@ export default function Dropdown({name, options, type}) {
     const [isOpen, setIsOpen] = useState(false)
     const curDropdown = useRef(null)
 
-    function handleClick(event){
-      if(curDropdown.current && isOpen && !curDropdown.current.contains(event.target)){
-        setIsOpen(false)
-      }
-    }
-    document.addEventListener('mousedown',handleClick)
-
     function handleOptionClicked(val){
       switch(type){
         case DROPDOWN_TYPES.SINGLE:
@@ -38,6 +31,14 @@ export default function Dropdown({name, options, type}) {
     const toggleMenu = () => {
         setIsOpen(!isOpen)
     }
+
+    // some reference taken for clicking off of the dropdown from: https://stackoverflow.com/questions/63359138/react-closing-a-dropdown-when-click-outside
+    function handleClick(event){
+      if(curDropdown.current && isOpen && !curDropdown.current.contains(event.target)){
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown',handleClick)
 
   return (
     <div ref={curDropdown} className='dropdown'>
